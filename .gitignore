@@ -5,3 +5,4 @@ be/logs
 be/dist
 
 be/.env
+fe/app/.env
