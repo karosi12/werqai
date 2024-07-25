@@ -31,8 +31,6 @@ This is the implementation of job listing api backend functionalities. It enable
 | PUT /api/job/apply          | Apply to a job       |  jobId |
 
 
-[Stackoverflow clone](https://documenter.getpostman.com/view/10646382/TVeiDqke)
-
 # To Install
 
 - Download or clone
