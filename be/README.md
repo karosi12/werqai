@@ -22,13 +22,13 @@ This is the implementation of job listing api backend functionalities. It enable
 
 ## API Endpoints
 
-| Endpoint                                          | Functionality                       |
-| ------------------------------------------------- | ----------------------------------- |
-| POST /api/signup                                  | Register a user                     |
-| POST /api/login                                   | Login a user                        |
-| GET /api/jobs                                     | List all job                        |
-| GET /api/job/:id                                  | view a job                          |
-| PUT /api/job/apply                                | Apply to a job                      |
+| Endpoint                    | Functionality        | Required fields |
+| --------------------------- | -------------------- | --------------  |
+| POST /api/signup            | Register a user      | fullName, phoneNumber, email, password |
+| POST /api/login             | Login a user         |  phoneNumber/email, password   |
+| GET /api/jobs               | List all job         |         |
+| GET /api/job/:id            | view a job           |  jobId  |
+| PUT /api/job/apply          | Apply to a job       |  jobId |
 
 
 [Stackoverflow clone](https://documenter.getpostman.com/view/10646382/TVeiDqke)
