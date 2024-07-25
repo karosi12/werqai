@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  # MongoDB services
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: unless-stopped
+    networks:
+      - werq_ai-network
+    ports:
+      - 2717:27017
+    volumes:
+      - mongo_db:/data/db
+
+  # Node API Service
+  werq_ai:
+    container_name: be_container
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    environment:
+      LOG_LABEL: ${LOG_LABEL}
+      LOG_LEVEL: ${LOG_LABEL}
+      LOG_FILE: ${LOG_FILE}
+      PORT: 3000
+      HOSTNAME: localhost
+      tokenExpiresIn: ${tokenExpiresIn}
+      MONGO_DB_URL: mongodb://mongo_db:${MONGO_DB_PORT}/${MONGO_DB_NAME}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - mongo_db
+    networks:
+      - werq_ai-network
+
+volumes:
+  mongo_db: {}
+
+networks:
+  werq_ai-network:
+    driver: bridge

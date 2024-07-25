@@ -1,0 +1,7 @@
+be/node_modules
+fe/app/node_modules
+be/data/*
+be/logs
+be/dist
+
+be/.env
