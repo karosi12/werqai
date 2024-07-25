@@ -9,6 +9,8 @@ This is the implementation of job listing api backend functionalities. It enable
 - MongoDB
 - Mongoose
 - Libaries: Es6, Babel-CLI, eslint, express
+- Note: check .env.sample on how to create/setup .env file in the *be* directory
+
 
 # Features
 
