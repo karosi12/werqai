@@ -6,6 +6,7 @@ const Jobs = () => {
     const [jobs, setJobs] = useState();
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -23,8 +24,12 @@ const Jobs = () => {
                 });
                 isMounted && setJobs(response.data?.data);
                 setLoading(false)
+                setErrorMessage('')
+                setSuccessMessage('')
             } catch (err) {
                 setLoading(false)
+                setErrorMessage('')
+                setSuccessMessage('')
                 navigate('/login', { state: { from: location }, replace: true });
             }
         }
@@ -47,7 +52,10 @@ const Jobs = () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
+            setErrorMessage('')
+            setSuccessMessage(response.data.message)
         } catch (error) {
+            setSuccessMessage('')
             setErrorMessage(error.response.data.message);
             navigate('/jobs', { state: { from: location }, replace: true });
         }
@@ -61,6 +69,11 @@ const Jobs = () => {
             {errorMessage && (
                 <div style={{ color: 'red', marginTop: '10px' }}>
                 {errorMessage}
+                </div>
+            )}
+            {successMessage && (
+                <div style={{ color: 'green', marginTop: '10px' }}>
+                {successMessage}
                 </div>
             )}
             <h2>Job List</h2>
