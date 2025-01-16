@@ -1,9 +1,9 @@
-# Job Listing Frontend And Backend Documentation
+# Job Listing Frontend and Backend Documentation
 
-This documentation will walk you through the Job Listing frontend, backend, and Infrastration installation and setup.
+This documentation will guide you through the Job Listing frontend, backend, and infrastructure installation and setup.
 
 ## CONTENT
 
 - [Frontend Documentation](./fe/app/README.md)
-- [Backend Documentation](./be/README.md) 
-- [Infrastration Documentation](./infra/ec2/readme.md)
+- [Backend Documentation](./be/README.md)
+- [Infrastructure Documentation](./infra/ec2/readme.md)
